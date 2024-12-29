@@ -1,0 +1,1 @@
+# Adam_Gal_Projekt_databazove_technologie
