@@ -6,7 +6,7 @@ Tento repozitár obsahuje implementáciu ETL procesu v Snowflake pre spracovanie
 ## 1. Úvod a popis zdrojových dát
 Zamerianie semestrálneho projektu je analyzovať dáta týkajúce sa filmov, používateľov a ich hodnotení. Táto analýza umožňuje identifikovať trendy vo filmových preferenciách, najpopulárnejšie filmy a správanie používateľov.
 
-Zdrojové dáta pochádzajú z MovieLens datasetu dostupného tu. Dataset obsahuje štyri hlavné tabulky:
+Zdrojové dáta pochádzajú z datasetu dostupného [tu](https://grouplens.org/datasets/movielens/). Dataset obsahuje osem hlavných tabuliek:
 
 - `age_group`
 - `genres`
@@ -24,9 +24,11 @@ Zdrojové dáta pochádzajú z MovieLens datasetu dostupného tu. Dataset obsahu
 ### ERD diagram
 
 Surové dáta sú usporiadané v relačnom modeli, ktorý je znázornený na entitno-relačnom diagrame (ERD):
-![MovieLens_ERD](https://github.com/user-attachments/assets/b95ddf0a-c2b3-45ce-9997-c982164a0890)
-
-<em>Obrázok 1 Entitno-relačná schéma MovieLens</em>
+<p align="center">
+  <img src="https://github.com/Adam-Gal/Adam_Gal_Projekt_databazove_technologie/blob/main/MovieLens_ERD.png">
+  <br>
+  <em>Obrázok 1 Entitno-relačná schéma MovieLens</em>
+</p>
 
 ---
 ## 2. Dimenzionálny model
@@ -41,9 +43,11 @@ Bol navrhnutý hviezdicový model, ktorý umožňuje efektívnu analýzu dát. C
 
 Štruktúra hviezdicového modelu je znázornená na priloženom diagrame. Diagram ukazuje vzťahy medzi faktovou tabuľkou fact_ratings a jednotlivými dimenziami, čím sa uľahčuje analýza a vizualizácia dát. Tento návrh zabezpečuje prehľadnú štruktúru dát, čo umožňuje rýchlu a flexibilnú analýzu hodnotení filmov.
 
-![MovieLens_ETL](https://github.com/user-attachments/assets/11195878-934e-4aa2-ae0d-91c250691153)
-
-<em>Obrázok 2 Schéma hviezdy pre AmazonBooks</em>
+<p align="center">
+  <img src="https://github.com/Adam-Gal/Adam_Gal_Projekt_databazove_technologie/blob/main/MovieLens_ETL.png">
+  <br>
+  <em>Obrázok 2 Schéma hviezdy pre AmazonBooks</em>
+</p>
 
 ---
 ## 3. ETL proces v Snowflake
@@ -182,6 +186,13 @@ DROP TABLE IF EXISTS ratings_staging;
 ---
 ## 4 Vizualizácia dát
 
+<p align="center">
+  <img src="https://github.com/Adam-Gal/Adam_Gal_Projekt_databazove_technologie/blob/main/Dashboard%20MovieLens.png">
+  <br>
+  <em>Obrázok 3 Dashboard MovieLens datasetu</em>
+</p>
+
+---
 ### Graf 1: Hodnotenia podľa žánru a pohlavia
 Táto vizualizácia zobrazuje počet hodnotení rozdelených podľa žánru a pohlavia používateľov. Umožňuje identifikovať, ktoré žánre sú populárnejšie medzi mužmi alebo ženami. Podľa grafu vidíme že muži najviac hodnotili žánre ako `Drama`, `Action`, `Comedy` a ženy najviac hodnotili `Comedy`, `Drama`. Tento prehľad môže byť užitočný pri tvorbe cielenej marketingovej stratégie pre jednotlivé žánre.
 
