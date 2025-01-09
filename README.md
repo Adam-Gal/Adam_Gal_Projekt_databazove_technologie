@@ -259,4 +259,5 @@ GROUP BY dim_genres.genre, dim_users.age_group
 ORDER BY dim_genres.genre, dim_users.age_group;
 ```
 
-
+---
+### Vytvoril Adam Gál
